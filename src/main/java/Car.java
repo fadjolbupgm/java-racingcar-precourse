@@ -1,5 +1,7 @@
 public class Car {
     public static final int MAX_LENGTH = 5;
+    private static final int MOVE_STANDARD = 4;
+    private int position = 0;
 
     private final String name;
 
@@ -27,5 +29,14 @@ public class Car {
     private void checkBlank(String name) {
         if(name.trim().isEmpty())
             throw new IllegalArgumentException("공백은 입력할 수 없습니다.");
+    }
+
+    public void move(int randomValue) {
+        if(randomValue >= MOVE_STANDARD){
+            this.position++;
+        }
+    }
+    public int getPosition() {
+        return position;
     }
 }
